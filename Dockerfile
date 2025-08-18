@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 # Set working directory
 WORKDIR /app
@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
 # Copy project files
 COPY pyproject.toml ./
 COPY server.py ./
+COPY README.md ./
 
 # Install dependencies with uv
 RUN uv pip install --system --no-cache .
